@@ -24,14 +24,14 @@ c = A \ y;
 RMS = rms(A*c-y)
 
 % insert the normal equations solve here: 
-
+y = (A.'*A)*c;
 
 % insert the QR solve here: 
-
+[Q,R]= qr(A);
 % insert the permuted QR solve here: 
-
+[Q,R,E] = qr(A);
 % uncomment this line to generate permutation matrix P
-%I = eye(11,11); P = I(:,E);
+I = eye(11,11); P = I(:,E);
 
 
 % the below plotting tool MAY help you with the quality prediction
